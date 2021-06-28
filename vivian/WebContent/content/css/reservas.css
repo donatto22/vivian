@@ -1,0 +1,185 @@
+#header {
+    display: flex;
+    width: 90%;
+    margin: 10px auto;
+}
+
+#header div {
+    width: 45%;
+    margin: 10px auto;
+}
+
+#header #img {
+    animation: up-down 5s ease infinite;
+}
+
+#header #text {
+    font-family: 'Chilanka';
+    font-size: 40px;
+    align-self: center;
+    text-align: center;
+}
+
+main {
+    margin: 10px auto;
+}
+
+.group {
+	margin: 1em 0;
+}
+
+input[type="date"], input[name="usuario"], input[name="codigo"] {
+	display: block;
+	border-radius: 5px;
+	width: 70%;
+	margin: 1em auto;
+	padding: 0.5em 1em;
+	outline: none;
+	border: 1px solid rgba(0, 0, 0, 0.3);
+	text-indent: 5px;
+}
+
+main {
+	width: 100%;
+}
+
+#content {
+	display: flex;
+	font-family: 'Dosis';
+}
+
+#content > div {
+	width: 50%;
+}
+
+#formulario {
+	position: sticky;
+	top: 7em;
+	margin: 0 auto;
+	width: 50%;
+}
+
+#formulario select {
+	width: 78.7% !important;
+}
+
+#fakeNav {
+	width: 80%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	margin: 2em auto;
+}
+
+#contexto-relleno {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.relleno {
+	width: 45%;
+	margin: 1em;
+}
+
+
+#fakeNav button, a[type="button"] {
+	text-decoration: none;
+	color: #000;
+	outline: none;
+	border-radius: 5px;
+	margin: 10px 0;
+	border: 0;
+	padding: 0.5em 1em;
+	font-family: 'Candara';
+	background-color: var(--color-lavander);
+	cursor: pointer;
+	transition: background-color, color;
+    transition-duration: 300ms;
+}
+
+a[type="button"] {
+	margin: 0 !important;
+}
+
+a[type="button"]:hover {
+	color: #eee;
+    background-color: var(--color-DarkRed);
+    transition: background-color, color;
+    transition-duration: 300ms;
+}
+
+#fakeNav > button:nth-child(1):hover {
+    color: #eee;
+    background-color: var(--color-bluelow);
+    transition: background-color, color;
+    transition-duration: 300ms;
+}
+
+#fakeNav > button:nth-child(2):hover {
+    color: #fff;
+    background-color: var(--color-dorado);
+    transition: background-color, color;
+    transition-duration: 300ms;
+}
+
+#fakeNav > button:nth-child(3):hover {
+    color: #eee;
+    background-color: var(--color-Dimgray);
+    transition: background-color, color;
+    transition-duration: 300ms;
+}
+
+@keyframes up-down {
+    0% {
+        transform: translateY(20px);
+    }
+
+    50% {
+        transform: translateY(0px);
+    }
+
+    100% {
+        transform: translateY(20px);
+    }
+}
+
+
+@media (max-width: 1290px) {
+	.relleno {
+		width: 80%;
+		margin: 1em auto;
+	}
+	
+	#formulario {
+		width: 70%;
+	}
+}
+
+@media (max-width: 1100px) {
+	body {
+		min-height: auto !important;
+	}
+
+	#header {
+	    margin: 1em auto;	
+	}
+}
+
+@media (max-width: 700px) {
+	#header {
+		display: unset;
+	}
+
+	#header div {
+		width: 70%;
+	}
+	
+	.relleno {
+		width: 100%;
+		margin: 1em;
+	}
+	
+	#formulario {
+		width: 90%;
+	}
+}

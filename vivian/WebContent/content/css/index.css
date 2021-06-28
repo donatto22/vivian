@@ -1,0 +1,155 @@
+@charset "ISO-8859-1";
+
+/* header */
+header {
+    width: 100%;
+}
+
+#header_img {
+    width: 100%;
+    background-color:var(--color-Dimgray);
+}
+
+#color {
+    width: 80%;
+    margin: auto;
+}
+
+#header_img #color img {
+    width: 100%;
+    height: 100%;
+}
+
+/* main */
+main > section article {
+    font-family: 'Chilanka';
+    display: flex;
+    flex-wrap: wrap;
+}
+
+main > section article div.center-promotion {
+    width: 40%;
+    margin: 10px auto;
+    line-height: 30px;
+}
+
+main > section:nth-child(1) div img {
+    filter: sepia(100%);
+    width: 100%;
+}
+
+.center-promotion div {
+    width: 30%;
+    margin: 10px auto;
+}
+
+.center-promotion div.texto-center  {
+    font-size: 20px;
+    width: 90%;
+    text-align: center;
+}
+
+article .texto-center p::selection {
+    background-color: var(--color-crema);
+}
+
+#services {
+    text-align: center;
+}
+
+#sectionInfo {
+    margin: 1em 0;
+}
+
+#sectionInfo svg {
+    margin: -1em 0;
+}
+
+#noti-post {
+    background-color: #011C39;
+}
+
+@media (min-width: 900px) {
+    #noti-post div {
+        width: 40%;
+    }
+}
+
+@media (max-width: 899px) {
+    #noti-post div {
+        width: 70%;
+    }
+}
+
+#noti-post div {
+    margin: 20px auto;
+    color: #fff;
+    font-family: 'Chilanka';
+}
+
+#noti-post div#noti-texto{
+    font-size: 25px;
+    align-self: center;
+}
+
+#noti-post div img {
+    width: 100%;
+}
+
+/* contacto */
+
+#contactInfo {
+    color: rgb(93, 83, 69);
+    font-family: 'Chilanka';
+    border-radius: 10px;
+    position: absolute;
+    top: 40px;
+    width: 350px;
+    padding: 1em 0;
+    background-color: #FAFAD2;
+    display: flex;
+    justify-content:space-between;
+    flex-direction: column;
+    z-index: 1;
+    box-shadow: 10px 10px 10px gray;
+}
+
+#contactInfo hr {
+    border-color: rgb(209, 185, 150);
+}
+
+#contactInfo ul li {
+    display: flex;
+    list-style: none;
+    text-decoration: none;
+    margin: 1em 0.5em;
+}
+
+#contactInfo ul li i {
+    text-align: center;
+    margin-inline-end: 1em;
+    font-size:2em;
+}
+
+#contactQuest {
+    /* position: absolute; -- can disabled*/
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding-left: 200px;
+    margin-left: 170px;
+    /*width: calc(100%- 150px);*/
+    /* height: 100%; -- can disabled */ 
+    box-shadow: 10px 10px 10px gray;
+}
+
+#contactInfo div {
+    width: 80%;
+    margin: 10px auto;
+}
+
+#contactQuest div {
+    text-align: justify;
+    font-family: 'Chilanka';
+    width: 90%;
+    margin: 4em auto;
+}
