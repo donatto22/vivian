@@ -11,6 +11,12 @@ Web application made in Java, Html, CSS, JavaScript
   - Architecture: MVC
   - Data Manager: MySQL
 
+- Integrations
+  - Bootstrap
+  - Sweet Alert
+  - JQuery
+  - AOS
+
 ## Images
 
 ![menu](https://user-images.githubusercontent.com/68967448/125233605-8d6a4d00-e2a4-11eb-90f2-458096784ca1.png)
