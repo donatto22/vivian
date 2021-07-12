@@ -19,7 +19,9 @@ Web application made in Java, Html, CSS, JavaScript
 
 ![faq page simulation](https://user-images.githubusercontent.com/68967448/125233644-a1ae4a00-e2a4-11eb-8d40-f84edc0ceba4.png)
 
-![userprofile simulation](https://user-images.githubusercontent.com/68967448/125233756-dde1aa80-e2a4-11eb-8bcc-81dabeac480e.png)
+![buy simulation](https://user-images.githubusercontent.com/68967448/125233841-07023b00-e2a5-11eb-9627-173edc3acdbb.png)
+
+![account simulation](https://user-images.githubusercontent.com/68967448/125233866-13869380-e2a5-11eb-9be7-24895f932745.png)
 
 
 #
