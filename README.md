@@ -19,6 +19,8 @@ Web application made in Java, Html, CSS, JavaScript
 
 ## Images
 
+![index](https://user-images.githubusercontent.com/68967448/125234502-7f1d3080-e2a6-11eb-9dc1-e6a2fc8fef55.png)
+
 ![menu](https://user-images.githubusercontent.com/68967448/125233605-8d6a4d00-e2a4-11eb-90f2-458096784ca1.png)
 
 ![reservations](https://user-images.githubusercontent.com/68967448/125233631-96f3b500-e2a4-11eb-86c9-dcf61efe4fdd.png)
