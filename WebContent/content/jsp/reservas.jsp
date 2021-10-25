@@ -115,31 +115,31 @@
 					<form method="post" action="/vivian/reServlet" id="formulario">
 						<div class="group" style="display: none;">
 							<label>C&#243;digo</label>
-							<input type="number" name="codigo" value="${u.idusuario}">
+							<input type="number" id="codigo" name="codigo" value="${u.idusuario}">
 						</div>
 					
 						<div class="group">
 							<label>Nombre:</label>
-							<input type="text" name="usuario" value="${u.nombre} ${u.apellido}" disabled readonly>
+							<input type="text" id="nombreUsuario" name="usuario" value="${u.nombre} ${u.apellido}" disabled readonly>
 						</div>
 						
 						<div class="group">
 							<label>N&#250;mero de Mesa:</label>
 							
-							<select name="mesa">
+							<select id="mesa" name="mesa">
 								<tools:mesas/>
 							</select>
 						</div>
 					
 						<div class="group">
 							<label>Fecha:</label>
-							<input type="date" name="fecha">
+							<input type="date" id="fecha" name="fecha" min="">
 						</div>
 						
 						<div class="group">
 							<label>Turno:</label>
 							
-							<select name="turno">
+							<select id="turno" name="turno">
 								<tools:turnos/>
 							</select>
 						</div> <hr style="width: 90%; margin: 2em auto; border: 1px dashed gray;">
@@ -153,13 +153,14 @@
 								</select>
 							</div>
 						</c:if>
-						
-						<div id="fakeNav">
-	            			<button type="submit" name="opcion" value="r">Solicitar</button>
-	            			<button type="submit" name="opcion" value="a">Modificar</button>
-	            			<button type="reset">Resetear</button>
-	        			</div>
-					</form>
+					</form>	
+					
+					<div id="fakeNav">
+            			<button id="solicitar" name="opcion" value="r">Solicitar</button>
+            			<button type="submit" name="opcion" value="a">Modificar</button>
+            			<button type="reset">Limpiar</button>
+        			</div>
+					
 				</div>
 				
 				<div id="relleno">
@@ -181,10 +182,10 @@
 								<p>Cliente: ${u.nombre} ${u.apellido} </p>
 								<p>N&#250;mero de Mesa: <c:out value="${x.numeroMesa}"></c:out> </p>
 								<p>Piso: <c:out value="${x.piso}"></c:out> </p>
-								<p>Turno: <c:out value="${x.idTurno}"></c:out> </p>
+								<p>Turno: <c:out value="${x.descripcionTurno}"></c:out> </p>
 								<p>Fecha: <c:out value="${x.fecha}"></c:out> </p>
 								<hr>
-								<p>Id Reservaci&#243;n: <c:out value="${x.idReserva}"></c:out> >> <a type="button" href="/vivian/reServlet?opcion=e&cod=${x.idReserva}">Anular Reserva</a></p>
+								<p>Id Reservaci&#243;n: <c:out value="${x.idReserva}"></c:out> >> <a type="button" id="${x.idReserva}" class="anularReserva">Anular Reserva</a></p>
 								<hr>
 					        </div>
 						</c:forEach>						
@@ -241,4 +242,60 @@
         </div>
     </footer>
 </body>
+<script>
+	$(document).ready(function(){
+		let mesa = $("#mesa");
+		let codigo = $("#codigo")
+		let fecha = $("#fecha");
+		let nombreUsuario = $("#nombreUsuario");
+		let turno = $("#turno");
+					
+		
+		$(".anularReserva").click(function(e){						
+			if(!confirm('\u00BFDesea Anular su Reservaci\u00F3n?'))return false;			
+			$.ajax({
+				type: 'POST',
+				url: '/vivian/reServlet?opcion=e',
+				data: {
+					"cod": $(this).attr('id')
+				},
+				success: function (data){
+					parent.location.href="/vivian/reServlet?opcion=mm&name="+$("#nombreUsuario").val()
+					
+				}
+			});									
+		});
+		
+		$("#solicitar").click(function(e){
+			if (mesa.val() == null || fecha.val() == undefined || fecha.val() == '' || turno.val() == null){
+				Swal.fire({
+					icon: 'error',
+                    title: 'Oops...',
+                    text: 'Verifique datos',
+				})
+				return false;
+			} else {
+				$.ajax({
+					type: 'POST',
+					url: '/vivian/reServlet?opcion=r',
+					data: {
+						"mesa":$("#mesa").val(),
+						"codigo":$("#codigo").val(),
+						"fecha":$("#fecha").val(),
+						"turno":$("#turno").val(),					
+						"name":$("#nombreUsuario").val(),					
+					},
+					success: function (data){
+						parent.location.href="/vivian/reServlet?opcion=mm&name="+$("#nombreUsuario").val()
+						
+					}
+				});
+			}						
+		});
+		
+		
+		
+		
+	});
+</script>
 </html>

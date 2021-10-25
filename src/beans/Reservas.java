@@ -7,7 +7,7 @@ public class Reservas implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	private int idCliente, piso;
-	private String fecha, idReserva, idTurno, numeroMesa;
+	private String fecha, idReserva, idTurno, numeroMesa, descripcionTurno;
 	
 	public Reservas() {}
 
@@ -65,4 +65,14 @@ public class Reservas implements Serializable {
 	public void setIdTurno(String idTurno) {
 		this.idTurno = idTurno;
 	}
+
+	public String getDescripcionTurno() {
+		return descripcionTurno;
+	}
+
+	public void setDescripcionTurno(String descripcionTurno) {
+		this.descripcionTurno = descripcionTurno;
+	}
+	
+	
 }

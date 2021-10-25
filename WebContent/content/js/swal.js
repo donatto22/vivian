@@ -38,7 +38,7 @@ function bueno(icono, titulo) {
 }
 
 function logeoBueno() {
-	bueno('success', 'Ingeso Existoso');
+	bueno('success', 'Ingreso Existoso');
 }
 
 function logeoMalo() {
