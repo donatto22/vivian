@@ -99,6 +99,7 @@ public class ReservasDao extends Conexion implements IntReservas {
 						r.setPiso(rs.getInt(4));
 						r.setFecha(rs.getString(5));
 						r.setIdTurno(rs.getString(6));
+						r.setDescripcionTurno(rs.getString(7));
 						lista.add(r);
 					}
 				}

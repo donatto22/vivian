@@ -46,7 +46,15 @@
 					<tools:navegacion />
 
 					<c:if test="${u == null}">
-						<li><a id="loginRegistro">Login</a></li>
+						<li>
+							<div class="dropdown">
+								<button onclick="drop4()" class="dropbtn">Login<i class="fas fa-angle-down"></i></button>
+								<div id="drop4" class="dropdown-content">
+									<a id="loginRegistro">Cliente</a> 
+									<a href="http://localhost:8091/login">Administrador</a>
+								</div>
+							</div>
+						</li>
 					</c:if>
 
 					<c:if test="${u != null}">

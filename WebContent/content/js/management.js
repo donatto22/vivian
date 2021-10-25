@@ -24,13 +24,16 @@ $(document).ready(function() {
 	});
 
 	$('#loginRegistro').on('click', function() {
-
+		$("#drop4").removeClass("show");
+		
 		$('body, html').animate({
 			scrollTop : '0px'
 		}, 050);
 
 		$("#central").load('/vivian/content/jsp/login.jsp').hide().fadeIn();
 		return false;
+		
+		
 	});
 
 	$('#usuario').on('click', function() {
@@ -71,6 +74,9 @@ window.onclick = function(event) {
 
 function drop2() {
 	document.getElementById("drop2").classList.toggle("show");
+	if ($("#drop3").hasClass("show")){
+		$("#drop3").removeClass("show");
+	}
 }
 
 window.onclick = function(event) {
@@ -90,6 +96,9 @@ window.onclick = function(event) {
 
 function drop3() {
 	document.getElementById("drop3").classList.toggle("show");
+	if ($("#drop2").hasClass("show")){
+		$("#drop2").removeClass("show");
+	}
 }
 
 window.onclick = function(event) {
@@ -105,4 +114,9 @@ window.onclick = function(event) {
 			}
 		}
 	}
+}
+
+
+function drop4() {
+	document.getElementById("drop4").classList.toggle("show");	
 }
